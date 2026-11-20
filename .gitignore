@@ -1,0 +1,38 @@
+# .gitignore — G224 MP126
+
+# Data CSVs (tracked by DVC instead of git)
+data/raw/train.csv
+data/raw/later.csv
+
+# DVC cache
+.dvc/cache/
+.dvc/tmp/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
