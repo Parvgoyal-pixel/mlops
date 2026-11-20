@@ -8,7 +8,8 @@ thresholds always come from one place and are never hard-coded.
 import pathlib
 import yaml
 
-# Project root is two levels above this file (src/mp126/config.py → root)
+# Resolve the project root dynamically from this file's location.
+# This keeps configuration paths independent of the current working directory.
 _ROOT = pathlib.Path(__file__).resolve().parents[2]
 
 
