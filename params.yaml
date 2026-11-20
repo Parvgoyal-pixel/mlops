@@ -10,6 +10,7 @@ paths:
   findings_yaml: reports/findings.yaml
   processed_dir: data/processed/
 
+# Integrity checksums used to verify the original source datasets.
 data_sha256:
   train: "61d09d93327626578cf1806cb690c5d9bd3527719620496f4630bfcd5f25735e"
   later: "ba35ef6463591e749f8dea24f7765b97d91b8aec95562f9d43caffdc2f3faafc"
