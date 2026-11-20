@@ -1,0 +1,29 @@
+
+# params.yaml — G224 MP126 College Canteen Lunch Rush
+# Read by src/mp126/config.py using yaml.safe_load.
+# Paths are relative to the project root.
+
+paths:
+  train_csv: data/raw/train.csv
+  later_csv: data/raw/later.csv
+  holdout_csv: data/raw/holdout_features.csv
+  findings_yaml: reports/findings.yaml
+  processed_dir: data/processed/
+
+data_sha256:
+  train: "61d09d93327626578cf1806cb690c5d9bd3527719620496f4630bfcd5f25735e"
+  later: "ba35ef6463591e749f8dea24f7765b97d91b8aec95562f9d43caffdc2f3faafc"
+
+checks:
+  # target_typos: values above this threshold are considered typos
+  target_typo_threshold: 2000
+  # stuck_sensor: minimum consecutive dates to flag a stuck sensor
+  stuck_sensor_min_days: 7
+  # sentinel values to look for in numeric columns
+  sentinel_candidates: [-999, -1, 999, 9999]
+  # unit_mixup: a block is flagged if its mean is this many times larger/smaller
+  unit_mixup_ratio_threshold: 5.0
+
+model:
+  random_state: 42
+  test_size: 0.2
