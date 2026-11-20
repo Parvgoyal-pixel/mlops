@@ -2,8 +2,14 @@
 # Pin every library so results are reproducible.
 # Generated with: pip freeze | grep <package>
 
+# Keeping dependency versions pinned to ensure consistent environments across the team.
+
 pandas==3.0.5
+
 numpy==2.4.6
+
 PyYAML==6.0.3
+
 pytest==9.2.0
+
 dvc==3.67.1
