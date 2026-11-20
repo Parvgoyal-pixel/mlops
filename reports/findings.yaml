@@ -1,0 +1,53 @@
+group_id: G224
+problem_id: MP126
+data_issues:
+  leaking_column:
+    present: true
+    column: plates_counted_by_cashier
+  unit_mixup:
+    present: false
+    column: null
+    group_value: null
+    factor: null
+  sentinel_value:
+    present: true
+    column: special_dishes
+    value: -999
+    count: 44
+  duplicate_rows:
+    present: true
+    count: 29
+  stuck_sensor:
+    present: false
+    column: null
+    start_date: null
+    end_date: null
+  target_typos:
+    present: true
+    count: 10
+  spelling_variants:
+    present: false
+    column: null
+    true_levels: null
+tracking:
+  experiment_name: null
+  best_run_id: null
+  registered_model_name: null
+  champion_version: null
+monitoring:
+  psi:
+    students_on_campus: null
+    menu_price_rs: null
+    temp_c: null
+    exam_days_left: null
+    special_dishes: null
+    queue_minutes_yesterday: null
+  most_drifted_feature: null
+  mae_by_group:
+    A-Block: null
+    B-Block: null
+    Hostel: null
+  worst_served_group: null
+  mae_v1_on_check: null
+  mae_v2_on_check: null
+  decision: null
