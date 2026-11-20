@@ -5,16 +5,15 @@
 |---|---|
 | **Group ID** | G224 |
 | **Problem ID** | MP126 |
-| **Faculty** | Upasna Joshi |
+| **Faculty** | Dr. Upasna Joshi |
 | **Batch** | 23 |
 
 ## Members
 | Enrolment No. | Name | Role |
 |---|---|---|
-| S24CSEU0246 | Yash Mudgal | Tests & README |
-| S24CSEU1356 | Hiten Mittal | Data Lead (DVC + 7 checks + findings) |
-| S24CSEU1362 | Ekta Mishra | Params & config |
-| S24CSEU1347 | Parv | Repo setup & .gitignore |
+| S24CSEU0246 | Yash Mudgal | Tests, CI placeholders |
+| S24CSEU1362 | Ekta Mishra | Params, config, requirements |
+| S24CSEU1347 | Parv | Repo setup, DVC, data checks, findings |
 
 ## Project Description
 The Patna Institute Canteen Committee needs to predict how many lunch plates (`plates_sold`) will be sold between 12–3 pm each day. This is a **regression** problem evaluated with **MAE**. The pipeline covers data versioning (DVC), a 7-point data audit, MLflow experiment tracking, a FastAPI prediction service, Docker containerisation, GitHub Actions CI, Kubernetes deployment, drift monitoring, and a final holdout prediction.
