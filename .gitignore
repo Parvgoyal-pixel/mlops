@@ -3,6 +3,16 @@
 # Data CSVs (tracked by DVC instead of git)
 data/raw/train.csv
 data/raw/later.csv
+data/train.csv
+data/later.csv
+data/holdout_features.csv
+data/processed/
+
+# Zip original root files
+findings.yaml
+GROUP.md
+PROBLEM.md
+STUDENT_HANDBOOK.md
 
 # DVC cache
 .dvc/cache/
