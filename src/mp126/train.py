@@ -234,3 +234,4 @@ def _update_findings(
 if __name__ == "__main__":
     params = get_params()
     run_experiments(params)
+

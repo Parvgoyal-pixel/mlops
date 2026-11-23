@@ -167,3 +167,4 @@ class TestFullPipeline:
         assert df["special_dishes"].min() >= 0
         assert df["plates_sold"].max() <= 2000
         assert len(df) == 5  # 6 - 1 duplicate
+

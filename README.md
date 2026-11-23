@@ -24,10 +24,16 @@ train.csv : 61d09d93327626578cf1806cb690c5d9bd3527719620496f4630bfcd5f25735e
 later.csv : ba35ef6463591e749f8dea24f7765b97d91b8aec95562f9d43caffdc2f3faafc
 ```
 
-## How to Run the Data Checks
+## How to Run the Pipeline & Tests
 ```bash
-# From the project root (after pip install -r requirements.txt):
+# Run data quality checks (Stage 1):
 python -m mp126.run_checks
+
+# Run data cleaning pipeline (Stage 2):
+python -m mp126.clean
+
+# Run MLflow model training & registry (Stage 2):
+python -m mp126.train
 
 # Run pytest (does NOT need the CSVs):
 pytest -q
@@ -53,6 +59,6 @@ reports/data_audit.md        ← evidence narrative for each check
 
 ## Stage Progress
 - [x] Stage 1 — Repo, DVC, 7 data checks, findings.yaml
-- [ ] Stage 2 — MLflow training, model registry
+- [x] Stage 2 — Cleaning pipeline, MLflow tracking, model registry, unit tests
 - [ ] Stage 3 — FastAPI, Docker, GitHub Actions, Kubernetes
 - [ ] Stage 4 — Drift monitoring, retraining, holdout predictions
