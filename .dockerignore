@@ -1,0 +1,18 @@
+# .dockerignore — keep the image small
+.git
+.dvc
+data/
+mlruns/
+mlflow.db
+__pycache__
+*.pyc
+.pytest_cache
+tests/
+.github/
+k8s/
+*.md
+*.yaml
+!requirements.txt
+findings.yaml
+predictions/
+reports/

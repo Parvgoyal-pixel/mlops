@@ -39,6 +39,18 @@ python -m mp126.train
 pytest -q
 ```
 
+## How to Run the Service
+```bash
+# Start the FastAPI prediction server:
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+# Build the Docker image:
+docker build -t mp126-api:1.0 .
+
+# Deploy to Kubernetes:
+kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml
+```
+
 ## Repo Layout
 ```
 README.md                    ← this file
@@ -48,7 +60,19 @@ src/mp126/__init__.py
 src/mp126/config.py          ← loads params.yaml
 src/mp126/data_checks.py     ← 7 check functions
 src/mp126/run_checks.py      ← CLI runner
-tests/test_data_checks.py    ← pytest tests (no CSV access)
+src/mp126/clean.py           ← data cleaning pipeline
+src/mp126/train.py           ← MLflow experiment tracking & model registry
+app/main.py                  ← FastAPI service: POST /predict, GET /health
+models/model.joblib          ← champion GradientBoosting model
+models/encoder.joblib        ← fitted OrdinalEncoder
+Dockerfile                   ← python:3.12-slim container image
+.dockerignore                ← keeps image small
+.github/workflows/ci.yml     ← pytest on every push
+k8s/deployment.yaml          ← Deployment (2 replicas, probes)
+k8s/service.yaml             ← Service mp126-svc (80 → 8000)
+tests/test_data_checks.py    ← 15 pytest tests (no CSV access)
+tests/test_clean.py          ← 13 cleaning pipeline tests
+tests/test_api.py            ← 11 TestClient API tests
 data/raw/train.csv.dvc       ← DVC pointer
 data/raw/later.csv.dvc       ← DVC pointer
 data/raw/holdout_features.csv← committed directly (no target)
@@ -60,5 +84,5 @@ reports/data_audit.md        ← evidence narrative for each check
 ## Stage Progress
 - [x] Stage 1 — Repo, DVC, 7 data checks, findings.yaml
 - [x] Stage 2 — Cleaning pipeline, MLflow tracking, model registry, unit tests
-- [ ] Stage 3 — FastAPI, Docker, GitHub Actions, Kubernetes
+- [x] Stage 3 — FastAPI, Docker, GitHub Actions, Kubernetes, JSON logging
 - [ ] Stage 4 — Drift monitoring, retraining, holdout predictions
