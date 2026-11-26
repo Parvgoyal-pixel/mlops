@@ -13,8 +13,10 @@ import sys
 import pathlib
 import pytest
 
-# Ensure src/ is on the path
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
+# Ensure repo root and src/ are on the path
+_ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(_ROOT))
+sys.path.insert(0, str(_ROOT / "src"))
 
 from fastapi.testclient import TestClient
 from app.main import app
